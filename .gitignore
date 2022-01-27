@@ -1,0 +1,8 @@
+#Intellij
+.idea/
+agify-serenity-cucumber.iml
+
+#Report
+target
+
+.DS_Store
