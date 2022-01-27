@@ -6,3 +6,5 @@ agify-serenity-cucumber.iml
 target
 
 .DS_Store
+.bash_profile
+.bash_profile.save
