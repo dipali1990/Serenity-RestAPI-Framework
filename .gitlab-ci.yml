@@ -1,0 +1,27 @@
+image: maven:latest
+
+stages:
+  - build
+  - test
+
+build-job:
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - mvn clean
+    - echo "Compile complete."
+
+test-job:
+  stage: test
+  script:
+    - mvn verify
+    - echo "test executed"
+    - echo "Copying reports to the public directory"
+    - mkdir public
+    - mv target/site/serenity/* public
+
+  artifacts:
+    when: always
+    expire_in: 1 week
+    paths:
+      - public
